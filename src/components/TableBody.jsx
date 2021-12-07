@@ -1,18 +1,11 @@
-const TableBody = ({ newData }) => {
-
+const TableBody = ({newData}) => {
     return (
-        <tbody>
-            {newData.map((elem, index) => {
-                return (
-                    <tr key={elem.id}>
-                        <th scope="row">{index + 1}</th>
-                        <td>{elem.name}</td>
-                        <td>{new Date(elem.date_local).toDateString()}</td>
-                        <td>{elem.details}</td>
-                    </tr>
-                )
-            })}
-        </tbody>
+        <>
+            <th scope="row">{newData.index + 1}</th>
+            <td>{newData.name}</td>
+            <td>{new Date(newData.date_local).toDateString()}</td>
+            <td>{newData.details}</td>
+        </>
     )
 }
 

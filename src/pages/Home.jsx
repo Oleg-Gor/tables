@@ -1,21 +1,28 @@
-import {  useState } from "react"
+import { useState } from "react"
 import { getPastLaunches } from "../api/api"
-import Table from "../components/Tabl"
+import Spinner from "../components/Spinner"
+import Table from "../components/Table"
 
 
 const Home = () => {
 
     const [data, setData] = useState()
+    const [isLoading, setIsLoading] = useState(false)
 
     const getData = async () => {
-        await getPastLaunches().then(data => setData(data))
+        setIsLoading(true)
+        await getPastLaunches().then(data => {
+            setData(data)
+            setIsLoading(false)
+        })
     }
 
     return (
-        <div className = 'container'>
+        <div className={isLoading? 'container darkTheme': 'container'}>
+            {!!isLoading && <Spinner />}
             <h1 className="m-3">Table</h1>
-            <button  type="button" className="btn btn-secondary m-3" onClick={getData}> Show all of units</button>
-            <Table data={data} />
+            <button type="button" className="btn btn-secondary m-3" onClick={getData}> Show all of units</button>
+            <Table data={data} setIsLoading = {setIsLoading} />
         </div>
     )
 }
