@@ -49,3 +49,12 @@ a.disabled {
 width: 60px;
 height: auto;
 }
+
+.totalUnits {
+width: 300px;
+}
+
+.totalSelect {
+
+  width: 70px;
+}

@@ -5,12 +5,12 @@ const TableFooter = ({ maxUnitsPerPage, setAmountOfUnitsPerPage, amountOfPages, 
                 <td colSpan={amountOfCows}>
                     <div className="footer">
                         <div className="footer">
-                            <select className="form-select" onChange={(e)=>setAmountOfUnitsPerPage(Number(e.target.value)) }>
+                            <select className="form-select totalSelect" onChange={(e)=>setAmountOfUnitsPerPage(Number(e.target.value)) }>
                                 <option defaultValue="10" >10</option>
                                 <option value="20">20</option>
                                 <option value="30">30</option>
                             </select>
-                            <div className ="info"> {`total units ${maxUnitsPerPage}`}</div>
+                            <div className ="info totalUnits" > {`total units ${maxUnitsPerPage}`}</div>
                         </div>
                         <div className="footer">
                             <div className ="info">{currentPage} page from {amountOfPages} pages</div>
