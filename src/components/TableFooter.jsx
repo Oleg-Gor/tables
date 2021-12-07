@@ -1,4 +1,4 @@
-const TableFooter = ({ maxUnitsPerPage, setAmountOfUnitsPerPage, amountOfPages, currentPage, setCurrentPage, amountOfCows }) => {    
+const TableFooter = ({ maxUnitsPerPage, setAmountOfUnitsPerPage, amountOfPages, currentPage, setCurrentPage, amountOfCows }) => {   
     return (
         <tfoot>
             <tr>
@@ -16,13 +16,13 @@ const TableFooter = ({ maxUnitsPerPage, setAmountOfUnitsPerPage, amountOfPages, 
                             <div className ="info">{currentPage} page from {amountOfPages} pages</div>
                             <nav aria-label="Page navigation example">
                                 <ul className="pagination">
-                                    <li className="page-item" onClick={() => setCurrentPage(currentPage-1)} >
-                                        <a className={currentPage === 1? "page-link disabled ":"page-link"}  href="#" aria-label="Previous" >
+                                    <li className="page-item"  >
+                                        <a className={currentPage === 1? "page-link disabled ":"page-link"}  href="#" aria-label="Previous" onClick={() => setCurrentPage(currentPage-1)}>
                                             <span aria-hidden="true">&laquo;</span>
                                         </a>
                                     </li>
-                                    <li className="page-item" onClick={() => setCurrentPage(currentPage+1)}>
-                                        <a className= {currentPage === amountOfPages? "page-link disabled ":"page-link"}  href="#" aria-label="Next" >
+                                    <li className="page-item" >
+                                        <a className= {currentPage === amountOfPages? "page-link disabled ":"page-link"}  href="#" aria-label="Next" onClick={() => setCurrentPage(currentPage+1)} >
                                             <span aria-hidden="true">&raquo;</span>
                                         </a>
                                     </li>
