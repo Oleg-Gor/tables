@@ -19,3 +19,33 @@ button {
 left: 50%;
 top: 30%;
 }
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.footer ul {
+display: flex;
+justify-content: center;
+align-items: center;
+margin: auto;
+}
+
+.footer .info {
+margin: 0 20px;
+display: inline-block;
+}
+
+a.disabled {
+  pointer-events: none; 
+  cursor: none;   
+  color: #999;  
+}
+
+.img {
+width: 60px;
+height: auto;
+}

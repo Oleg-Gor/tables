@@ -1,11 +1,15 @@
-const TableBody = ({newData}) => {
+import TableRow from "./TableRow"
+
+const TableBody = ({ newData }) => {
     return (
-        <>
-            <th scope="row">{newData.index + 1}</th>
-            <td>{newData.name}</td>
-            <td>{new Date(newData.date_local).toDateString()}</td>
-            <td>{newData.details}</td>
-        </>
+        <tbody>
+            {newData.map(elem => <TableRow key={elem.id} data={{
+                name: elem.name,
+                img_link: elem.links.patch.small,
+                date_local: elem.date_local,
+                details: elem.details
+            }} />)}
+        </tbody>
     )
 }
 

@@ -21,7 +21,6 @@ const Home = () => {
         <div className={isLoading? 'container darkTheme': 'container'}>
             {!!isLoading && <Spinner />}
             <h1 className="m-3">Table</h1>
-            <button type="button" className="btn btn-secondary m-3" onClick={getData}> Show all of units</button>
             <Table data={data} setIsLoading = {setIsLoading} />
         </div>
     )
