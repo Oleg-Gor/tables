@@ -5,6 +5,8 @@ import Landpads from "./pages/Landpads";
 import NextLaunches from "./pages/NextLaunches";
 import PastLaunches from "./pages/PastLaunches";
 
+const NotFound = () => <div>Not Found</div>
+
 function App() {
   return (
 
@@ -14,7 +16,8 @@ function App() {
         <Route path="pastlaunches" element={<PastLaunches />} />
         <Route path="nextlaunches" element={<NextLaunches />} />
         <Route path="landpads" element={<Landpads />} />
-        <Route path="*" element={<Navigate to='/' />} />
+        <Route path="404" element={<NotFound/>} />
+        <Route path="*" element={<Navigate to='/404' />} />
       </Route>
     </Routes>
   );
