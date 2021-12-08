@@ -1,9 +1,10 @@
 import { useEffect, useState, useCallback } from "react";
+import { useLocation } from "react-router";
 import TableBody from "./TableBody";
 import TableFooter from "./TableFooter";
 import TableHeader from "./TableHeader";
 
-const Table = ({ data, headerNames }) => {
+const Table = ({ data, headerNames, portionSize }) => {
 
 
   const [newData, setNewData] = useState([...data]);
@@ -11,11 +12,22 @@ const Table = ({ data, headerNames }) => {
   const [amountOfUnitsPerPage, setAmountOfUnitsPerPage] = useState(10);
   const [maxUnitsPerPage, setMaxUnitsPerPage] = useState(null);
   const [amountOfPages, setAmountOfPages] = useState(null);
+  const [portionCount, setPortionCount] = useState(null)
+  const [portionNumber, setPortionNumber] = useState(null)
+  
+  const location = useLocation()
+
+
 
   const filterData = useCallback(() => {
     const amountOfUnits = data.length;
     setMaxUnitsPerPage(amountOfUnits);
     setAmountOfPages(Math.ceil(amountOfUnits / amountOfUnitsPerPage));
+
+    const amountOfPortions = Math.ceil(amountOfPages/portionSize)
+    setPortionCount(amountOfPortions)
+    amountOfPortions>1 && setPortionNumber(1)
+
     const begin =
       currentPage === 1 ? 0 : (currentPage - 1) * amountOfUnitsPerPage;
     const end =
@@ -35,10 +47,11 @@ const Table = ({ data, headerNames }) => {
     setCurrentPage(1);
   }, [amountOfUnitsPerPage]);
 
+
   return !!newData.length ? (
     <table className="table">
       <TableHeader headerNames={headerNames} />
-      <TableBody newData={newData} />
+      <TableBody newData={newData} location={location.pathname}/>
       <TableFooter
         maxUnitsPerPage={maxUnitsPerPage}
         setAmountOfUnitsPerPage={setAmountOfUnitsPerPage}

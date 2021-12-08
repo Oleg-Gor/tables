@@ -5,7 +5,8 @@ import Table from "../components/Table"
 
 
 const PastLaunches = () => {
-    const headerNames = ["name", "img", "date_local", "details"];
+    const headerNames = ["Name", "Image", "Date", "Details"];
+    const portionSize = 3;
 
     const [data, setData] = useState(null)
     const [isLoading, setIsLoading] = useState(false)
@@ -25,8 +26,8 @@ const PastLaunches = () => {
     return (
         <div className={isLoading? 'container darkTheme': 'container'}>
             {!!isLoading && <Spinner />}
-            <h1 className="m-3">Table</h1>
-            {data && <Table data={data} headerNames= {headerNames} />}
+            <h1 className="m-3">Past Launches</h1>
+            {data && <Table data={data} headerNames= {headerNames} portionSize={portionSize} />}
         </div>
     )
 }

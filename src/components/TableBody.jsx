@@ -1,12 +1,18 @@
-import TableRow from "./TableRow"
+import { TableRowLandpads, TableRowPastLaunches } from "./TableRows"
 
-const TableBody = ({ newData }) => {
+const TableBody = ({ newData, location }) => {
     return (
         <tbody>
-            {newData.map(elem => <TableRow key={elem.id} data={{
+            {location === "/pastlaunches" && newData.map(elem => <TableRowPastLaunches location={location} key={elem.id} data={{
                 name: elem.name,
-                img_link: elem.links?.patch?.small ,
+                img_link: elem.links?.patch?.small,
                 date_local: elem.date_local,
+                details: elem.details
+            }} />)}
+            {location === "/landpads" && newData.map(elem => <TableRowLandpads location={location} key={elem.id} data={{
+                name: elem.full_name,
+                img_link: elem.images.large,
+                region: elem.region,
                 details: elem.details
             }} />)}
         </tbody>

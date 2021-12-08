@@ -48,7 +48,7 @@ margin: 0 20px;
 display: inline-block;
 }
 
-a.disabled {
+button.disabled {
   pointer-events: none; 
   cursor: none;   
   color: #999;  

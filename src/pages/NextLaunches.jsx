@@ -1,32 +1,28 @@
 import { useState, useEffect } from "react"
-import { getPastLaunches } from "../api/api"
+import { getNextLaunches } from "../api/api"
+import NextLaunchesComponent from "../components/NextLaunches"
 import Spinner from "../components/Spinner"
-import Table from "../components/Table"
 
 
 const NextLaunches = () => {
-    const headerNames = ["name", "img", "date_local", "details"];
-
     const [data, setData] = useState(null)
     const [isLoading, setIsLoading] = useState(false)
 
     const getData = async () => {
         setIsLoading(true)
-        await getPastLaunches().then(data => {
+        await getNextLaunches().then(data => {
             setData(data)
             setIsLoading(false)
         })
     }
-
     useEffect(() => {
         getData()
     },[]) 
-
     return (
         <div className={isLoading? 'container darkTheme': 'container'}>
             {!!isLoading && <Spinner />}
-            <h1 className="m-3">Table</h1>
-            {data && <Table data={data} headerNames= {headerNames} />}
+            <h1 className="m-3">Next Launches</h1>
+            {data && <NextLaunchesComponent data={data} />}
         </div>
     )
 }

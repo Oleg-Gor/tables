@@ -1,13 +1,6 @@
-import { Link } from "react-router-dom"
-import Sidebar from "../components/Sidebar"
+import NextLaunches from "./NextLaunches"
 
-
-const Home = () => (<div class="container-fluid">
-<h1>Main page</h1>
-</div>
-
-
-
-
-)
+const Home = () => (<div className="container-fluid">
+    <NextLaunches/>
+</div>)
 export default Home

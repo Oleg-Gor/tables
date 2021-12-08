@@ -5,7 +5,7 @@ import Table from "../components/Table"
 
 
 const Landpads = () => {
-    const headerNames = ["name", "img", "date_local", "details"];
+    const headerNames = ["Name", "Image", "Region", "Details"];
 
     const [data, setData] = useState(null)
     const [isLoading, setIsLoading] = useState(false)
@@ -25,7 +25,7 @@ const Landpads = () => {
     return (
         <div className={isLoading? 'container darkTheme': 'container'}>
             {!!isLoading && <Spinner />}
-            <h1 className="m-3">Table</h1>
+            <h1 className="m-3">Land pads</h1>
             {data && <Table data={data} headerNames= {headerNames} />}
         </div>
     )
