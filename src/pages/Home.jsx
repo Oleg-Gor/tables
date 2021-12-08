@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { getPastLaunches } from "../api/api"
 import Spinner from "../components/Spinner"
 import Table from "../components/Table"
@@ -6,7 +6,7 @@ import Table from "../components/Table"
 
 const Home = () => {
 
-    const [data, setData] = useState()
+    const [data, setData] = useState(null)
     const [isLoading, setIsLoading] = useState(false)
 
     const getData = async () => {
@@ -17,11 +17,15 @@ const Home = () => {
         })
     }
 
+    useEffect(() => {
+        getData()
+    },[]) 
+
     return (
         <div className={isLoading? 'container darkTheme': 'container'}>
             {!!isLoading && <Spinner />}
             <h1 className="m-3">Table</h1>
-            <Table data={data} setIsLoading = {setIsLoading} />
+            {data && <Table data={data} />}
         </div>
     )
 }

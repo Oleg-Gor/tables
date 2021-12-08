@@ -17,14 +17,14 @@ const TableFooter = ({ maxUnitsPerPage, setAmountOfUnitsPerPage, amountOfPages, 
                             <nav aria-label="Page navigation example">
                                 <ul className="pagination">
                                     <li className="page-item"  >
-                                        <a className={currentPage === 1? "page-link disabled ":"page-link"}  href="#" aria-label="Previous" onClick={() => setCurrentPage(currentPage-1)}>
+                                        <button className={currentPage === 1? "page-link disabled ":"page-link"}  aria-label="Previous" onClick={() => setCurrentPage(currentPage-1)}>
                                             <span aria-hidden="true">&laquo;</span>
-                                        </a>
+                                        </button>
                                     </li>
                                     <li className="page-item" >
-                                        <a className= {currentPage === amountOfPages? "page-link disabled ":"page-link"}  href="#" aria-label="Next" onClick={() => setCurrentPage(currentPage+1)} >
+                                        <button className= {currentPage === amountOfPages? "page-link disabled ":"page-link"}  aria-label="Next" onClick={() => setCurrentPage(currentPage+1)} >
                                             <span aria-hidden="true">&raquo;</span>
-                                        </a>
+                                        </button>
                                     </li>
                                 </ul>
                             </nav>
