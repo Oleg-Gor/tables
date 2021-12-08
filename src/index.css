@@ -2,9 +2,18 @@ h1 {
   padding-bottom: 20px;
 }
 button {
-
   margin-bottom: 20px;
+}
 
+.img {
+  width: 60px;
+  height: auto;
+  }
+
+.img-round {
+  width: 60px;
+  height: auto;
+border-radius: 45%;
 }
 
 .darkTheme {
@@ -43,11 +52,6 @@ a.disabled {
   pointer-events: none; 
   cursor: none;   
   color: #999;  
-}
-
-.img {
-width: 60px;
-height: auto;
 }
 
 .totalUnits {

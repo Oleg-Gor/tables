@@ -3,8 +3,8 @@ import TableBody from "./TableBody";
 import TableFooter from "./TableFooter";
 import TableHeader from "./TableHeader";
 
-const Table = ({ data }) => {
-  const headerNames = ["name", "img", "date_local", "details"];
+const Table = ({ data, headerNames }) => {
+
 
   const [newData, setNewData] = useState([...data]);
   const [currentPage, setCurrentPage] = useState(1);

@@ -5,7 +5,7 @@ const TableBody = ({ newData }) => {
         <tbody>
             {newData.map(elem => <TableRow key={elem.id} data={{
                 name: elem.name,
-                img_link: elem.links.patch.small,
+                img_link: elem.links?.patch?.small ,
                 date_local: elem.date_local,
                 details: elem.details
             }} />)}
