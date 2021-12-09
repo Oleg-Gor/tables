@@ -18,7 +18,6 @@ const PastLaunches = () => {
             setIsLoading(false)
         })
     }
-
     useEffect(() => {
         getData()
     },[]) 
