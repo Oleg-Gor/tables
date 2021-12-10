@@ -15,6 +15,17 @@ const Table = ({ data, headerNames, portionSize }) => {
 
   const location = useLocation()
 
+  const getNewDataToShow = useCallback((amountOfUnitsPerPage, amountOfUnits) => {
+    const begin =
+      currentPage === 1 ? 0 : (currentPage - 1) * amountOfUnitsPerPage;
+
+    const end =
+      Number(begin + amountOfUnitsPerPage) > amountOfUnits - 1
+        ? amountOfUnits - 1
+        : Number(begin + amountOfUnitsPerPage);
+    return data.slice(begin, end);
+  }, [currentPage, data])
+
   const filterData = useCallback(() => {
     const amountOfUnits = data.length;
     setMaxUnitsPerPage(amountOfUnits);
@@ -24,18 +35,7 @@ const Table = ({ data, headerNames, portionSize }) => {
     let newData = getNewDataToShow(amountOfUnitsPerPage, amountOfUnits);
 
     setNewData(newData);
-  }, [amountOfUnitsPerPage, currentPage, data, portionSize]);
-
-  const getNewDataToShow = (amountOfUnitsPerPage, amountOfUnits) => {
-    const begin =
-      currentPage === 1 ? 0 : (currentPage - 1) * amountOfUnitsPerPage;
-
-    const end =
-      Number(begin + amountOfUnitsPerPage) > amountOfUnits - 1
-        ? amountOfUnits - 1
-        : Number(begin + amountOfUnitsPerPage);
-    return data.slice(begin, end);
-  }
+  }, [amountOfUnitsPerPage, data, getNewDataToShow]);
 
   useEffect(() => {
     filterData();

@@ -79,3 +79,12 @@ button.disabled {
 .horizontal-align {
   display: flex;
 }
+
+.nav-item {
+  margin: 10px;
+}
+
+nav li a.btn {
+
+  display: block;
+}
