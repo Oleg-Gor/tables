@@ -3,18 +3,18 @@ import fbImage from "../img/petus.png";
 export const TableRowLandpads = ({ data }) => {
   return (
     <tr>
-      <th>{data.name}</th>
+      <th className="name">{data.name}</th>
       {data.img_link ? (
-        <td >
+        <td className="image">
           <img className="img" src={data.img_link} alt={data.name} />
         </td>
       ) : (
-        <td>
+        <td className="image">
           <img className="img" src={fbImage} alt={data.name} />
         </td>
       )}
-      <td>{data.region}</td>
-      <td>{data.details}</td>
+      <td className="region">{data.region}</td>
+      <td className="details">{data.details}</td>
     </tr>
   );
 };

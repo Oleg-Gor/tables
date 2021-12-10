@@ -1,5 +1,4 @@
 const NextLaunchesComponent = ({ data }) => {
-  console.log("data ", data);
   return (
     <div className="card mb-3">
       <div className="card-body">

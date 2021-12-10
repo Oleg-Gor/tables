@@ -59,24 +59,23 @@ button.disabled {
 }
 
 .name {
-width: 15%;
+  width: 15%;
 }
 
-.date{
+.date {
   width: 17%;
 }
-.image{
-
+.image {
   width: 10%;
 }
+.region {
 
+  width: 5%;
+}
 .details {
   width: 58%;
 }
 
 .horizontal-align {
-
   display: flex;
-  
-
 }
