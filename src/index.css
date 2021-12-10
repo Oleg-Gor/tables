@@ -1,19 +1,16 @@
 h1 {
   padding-bottom: 20px;
 }
-button {
-  margin-bottom: 20px;
-}
 
 .img {
   width: 60px;
   height: auto;
-  }
+}
 
 .img-round {
   width: 60px;
   height: auto;
-border-radius: 45%;
+  border-radius: 45%;
 }
 
 .darkTheme {
@@ -25,39 +22,61 @@ border-radius: 45%;
 
 .spinner {
   position: fixed;
-left: 50%;
-top: 30%;
+  left: 50%;
+  top: 30%;
 }
 
 .footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
 }
 
 .footer ul {
-display: flex;
-justify-content: center;
-align-items: center;
-margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
 }
 
 .footer .info {
-margin: 0 20px;
-display: inline-block;
+  margin: 0 20px;
+  display: inline-block;
 }
 
 button.disabled {
-  pointer-events: none; 
-  cursor: none;   
-  color: #999;  
+  pointer-events: none;
+  cursor: none;
+  color: #999;
 }
 
 .totalUnits {
-width: 300px;
+  width: 300px;
 }
 
 .totalSelect {
   width: 70px;
+}
+
+.name {
+width: 15%;
+}
+
+.date{
+  width: 17%;
+}
+.image{
+
+  width: 10%;
+}
+
+.details {
+  width: 58%;
+}
+
+.horizontal-align {
+
+  display: flex;
+  
+
 }

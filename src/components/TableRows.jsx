@@ -5,7 +5,7 @@ export const TableRowLandpads = ({ data }) => {
     <tr>
       <th>{data.name}</th>
       {data.img_link ? (
-        <td>
+        <td >
           <img className="img" src={data.img_link} alt={data.name} />
         </td>
       ) : (
@@ -22,18 +22,18 @@ export const TableRowLandpads = ({ data }) => {
 export const TableRowPastLaunches = ({ data }) => {
   return (
     <tr>
-      <th>{data.name}</th>
+      <th className="name">{data.name}</th>
       {data.img_link ? (
-        <td>
+        <td className="image">
           <img className="img" src={data.img_link} alt={data.name} />
         </td>
       ) : (
-        <td>
+        <td className="image">
           <img className="img" src={fbImage} alt={data.name} />
         </td>
       )}
-      <td>{new Date(data.date_local).toDateString()}</td>
-      <td>{data.details}</td>
+      <td className="date">{new Date(data.date_local).toDateString()}</td>
+      <td className="details">{data.details}</td>
     </tr>
   );
 };

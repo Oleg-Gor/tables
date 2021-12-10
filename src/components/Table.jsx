@@ -11,8 +11,6 @@ const Table = ({ data, headerNames, portionSize }) => {
   const [amountOfUnitsPerPage, setAmountOfUnitsPerPage] = useState(10);
   const [maxUnitsPerPage, setMaxUnitsPerPage] = useState(null);
   const [amountOfPages, setAmountOfPages] = useState(null);
-  const [portionCount, setPortionCount] = useState(null)
-  const [portionNumber, setPortionNumber] = useState(null)
   const [arrOfPortion, setArrOfPortion] = useState([])
 
   const location = useLocation()
@@ -72,7 +70,7 @@ const Table = ({ data, headerNames, portionSize }) => {
   }, [currentPage, amountOfPages, portionSize])
 
   return !!newData.length ? (
-    <table className="table">
+    <table className="table align-middle">
       <TableHeader headerNames={headerNames} />
       <TableBody newData={newData} location={location.pathname} />
       <TableFooter

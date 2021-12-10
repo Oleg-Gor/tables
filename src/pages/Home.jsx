@@ -1,6 +1,6 @@
 import NextLaunches from "./NextLaunches"
 
 const Home = () => (<div className="container-fluid">
-    <NextLaunches/>
+  <NextLaunches />
 </div>)
 export default Home

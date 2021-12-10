@@ -9,14 +9,13 @@ const NotFound = () => <div>Not Found</div>
 
 function App() {
   return (
-
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
         <Route path="pastlaunches" element={<PastLaunches />} />
         <Route path="nextlaunches" element={<NextLaunches />} />
         <Route path="landpads" element={<Landpads />} />
-        <Route path="404" element={<NotFound/>} />
+        <Route path="404" element={<NotFound />} />
         <Route path="*" element={<Navigate to='/404' />} />
       </Route>
     </Routes>
